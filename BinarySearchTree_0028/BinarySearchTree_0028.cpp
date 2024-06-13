@@ -39,4 +39,21 @@ public:
 		Node* currentNode = nullptr;
 		search(element, parent, currentNode); // Locate the node which to the parrent of the node to be inserted
 
-		
+		if (parent == nullptr) // If the parent is NULL (Tree is empty)
+		{
+			ROOT = newNode;; // Mark the new node as ROOT
+			return; //Exit
+		}
+
+		if (element < parent->info) //If the value in the data field of the new node is less than of the parent
+		{
+			parent->leftchild = newNode; //Make the left child of the parent point to the new node
+		}
+		else if (element > parent->info) // If the value in the data field of the new data is greater than that of the parent
+		{
+			parent->rightchild = newNode; //Make the right child of the parent point to the new node
+		}
+	}
+
+
+	
